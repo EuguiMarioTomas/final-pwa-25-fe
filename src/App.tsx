@@ -19,7 +19,7 @@ export default function App(){
         <Route path="/login" element={<Login />} />
         <Route path="/createReminder" element={userLoggedIn ? <CreateReminder /> : <Navigate to="/login" />} />
         <Route path='*' element={<h1>Página no encontrada.🔴</h1>} />
-        {/* Aquí puedes agregar más rutas según sea necesario */}
+        
       </Routes>
     </Router>
   );
