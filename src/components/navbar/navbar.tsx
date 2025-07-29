@@ -2,13 +2,16 @@ import {Link, useNavigate} from 'react-router-dom';
 import {useAuth} from '../../context/auth/useAuth';
 import {logOut} from '../../firebase/auth';
 
+
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
+  
   const auth = useAuth();
   const navigate = useNavigate();
-
+  
   const handleLogout = async () =>{
     await logOut();
     navigate('/login');
@@ -33,10 +36,10 @@ const Navbar = () => {
                   </Link>
                   <ul className='dropdown-menu'>
                     <li><Link className='dropdown-item' to='/createReminder'>Crear Recordatorio</Link></li>
-                    <li><Link className='dropdown-item' to='/reminders'>Mis Recordatorios</Link></li>
+                    <li><Link className='dropdown-item' to='/myReminders'>Mis Recordatorios</Link></li>
                     <li><Link className='dropdown-item' to='/sharedReminders'>Recordatorios Compartidos</Link></li>
                     <li><hr className="dropdown-divider"></hr></li>
-                    <li><Link className='dropdown-item' to='/archivedReminders'>Recordatorios Archivados</Link></li>
+                    <li><Link className='dropdown-item' to='/myArchivedReminders'>Recordatorios Archivados</Link></li>
                   </ul>
                 </li>
                 <li className='nav-item'>
