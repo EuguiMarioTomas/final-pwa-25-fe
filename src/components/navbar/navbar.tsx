@@ -4,9 +4,6 @@ import {logOut} from '../../firebase/auth';
 
 
 
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 const Navbar = () => {
   
   const auth = useAuth();
@@ -30,6 +27,9 @@ const Navbar = () => {
           <ul className='navbar-nav ms-auto'>
             {auth?.userLoggedIn ? (
               <>
+                <li className='nav-item'>
+                  <Link className='nav-link' to='/home'>Inicio</Link> 
+                </li>
                 <li className='nav-item dropdown'>
                   <Link className='nav-link dropdown-toggle' to='#' role='button' data-bs-toggle='dropdown' aria-expanded='false'> 
                     Recordatorios
@@ -41,9 +41,6 @@ const Navbar = () => {
                     <li><hr className="dropdown-divider"></hr></li>
                     <li><Link className='dropdown-item' to='/myArchivedReminders'>Recordatorios Archivados</Link></li>
                   </ul>
-                </li>
-                <li className='nav-item'>
-                  <Link className='nav-link' to='/home'>Inicio</Link> 
                 </li>
                 <li className='nav-item'>
                   <button className='btn btn-outline-light ms-2' onClick={handleLogout}>
