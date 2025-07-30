@@ -28,7 +28,7 @@ function CreateReminder() {
       });
       console.log('Recordatorio creado:', response.data);
       reset();
-      navigate('/reminders');
+      navigate('/myReminders');
     }catch(error){
       console.error('Error al crear el recordatorio:', error);
       alert('Error al crear el recordatorio. Inténtalo de nuevo.');
