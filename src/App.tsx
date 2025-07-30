@@ -12,6 +12,10 @@ import EditReminder from "./pages/updateReminders/updateReminders";
 
 import {useAuth} from "./context/auth/useAuth";
 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 export default function App(){
   const {userLoggedIn} = useAuth();
 
@@ -22,12 +26,12 @@ export default function App(){
         <Route path="/" element={userLoggedIn ? <Navigate to="/home" /> : <Navigate to="/login" />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/home" element={userLoggedIn ?<HomePage /> : <Navigate to="/login" />} />
         <Route path="/createReminder" element={userLoggedIn ? <CreateReminder /> : <Navigate to="/login" />} />
         <Route path="/myReminders" element={userLoggedIn ? <MyReminders /> : <Navigate to="/login" />} />
         <Route path="/myArchivedReminders" element={userLoggedIn ? <MyArchivedReminders /> : <Navigate to="/login" />} />
         <Route path="/sharedReminders" element={userLoggedIn ? <SharedReminders /> : <Navigate to="/login" />} />
-        <Route path="/editReminder/:id" element={userLoggedIn ? <EditReminder /> : <Navigate to='/login' />} />
+        <Route path="/editReminder/:reminderId" element={userLoggedIn ? <EditReminder /> : <Navigate to='/login' />} />
         <Route path='*' element={<h1>Página no encontrada.🔴</h1>} />
         
       </Routes>
