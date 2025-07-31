@@ -12,12 +12,14 @@ import EditReminder from "./pages/updateReminders/updateReminders";
 
 import {useAuth} from "./context/auth/useAuth";
 
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function App(){
-  const {userLoggedIn} = useAuth();
+  const {userLoggedIn, loading} = useAuth();
+
+  if(loading){
+    return <div className='text-center mt-5'>Cargando...</div>
+  }
 
   return (
     <Router>
