@@ -7,18 +7,20 @@ import type {User} from 'firebase/auth';
 export const AuthProvider = ({children}: {children: React.ReactNode}) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
       setUserLoggedIn(!!user);
+      setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
 
   return (
-    <AuthContext.Provider value={{currentUser, userLoggedIn}}>
+    <AuthContext.Provider value={{currentUser, userLoggedIn, loading}}>
       {children}
     </AuthContext.Provider>
   );
