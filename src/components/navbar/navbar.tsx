@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return(
     <div>   
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-3'>
+      <nav className='navbar navbar-expand-lg sticky-top px-3'>
         <Link className='navbar-brand' to='/'>
           PWA Final Project
         </Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li className='nav-item'>
-                  <button className='btn btn-outline-light ms-2' onClick={handleLogout}>
+                  <button className='btn btn-custom ms-2' onClick={handleLogout}>
                     Cerrar Sesión
                   </button>
                 </li>
