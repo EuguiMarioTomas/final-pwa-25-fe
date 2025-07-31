@@ -36,9 +36,9 @@ function CreateReminder() {
   };
 
   return(
-    <div className='container'>
-      <h1>Crear Recordatorio</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <div className='container create-reminder-container'>
+      <h1 className='create-title mb-4'>Crear Recordatorio</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className='reminder-form'>
         <div className='mb-3'>
           <label className='form-label'>Título</label>
           <input className='form-control' {...register('title', {required:true})}/>
@@ -63,8 +63,9 @@ function CreateReminder() {
           <label className='form-label'>Fecha de vencimiento</label>
           <input className='form-control' type='date' {...register('dueDate')}/>
         </div>
-
-        <button className='btn btn-primary' type='submit'>Crear Recordatorio</button>
+        <div className='mt-auto d-flex justify-content-end mt-3'>
+          <button className='btn btn-custom' type='submit'>Crear Recordatorio</button>
+        </div>
       </form>
     </div>
   );

@@ -49,22 +49,22 @@ function MyArchivedReminders(){
     return <div className='container mt-4'>Cargando recordatorios archivados...</div>;
   }
   return(
-    <div className='container'>
-      <h1 className='mt-4'>Mis Recordatorios Archivados</h1>
+    <div className='container archived-reminders-container'>
+      <h1 className='mt-1 mb-5 archived-reminders-title'>Mis Recordatorios Archivados</h1>
       {reminders.length === 0 ? (
-        <p>No tienes recordatorios archivados.</p>
+        <p className='text-center no-reminders'>No tienes recordatorios archivados.</p>
       ) : (
         <div className='row justify-content-around'>
           {reminders.map((reminder) => (
             <div key={reminder._id} className='col-md-4 mb-3'>
-              <div className='card h-100'>
-                <div className='card-body'>
+              <div className='card h-100 mt-2 archived-reminder-card'>
+                <div className='card-body d-flex flex-column'>
                   <h2 className='card-title'>{reminder.title}</h2>
                   <p className='card-text'>{reminder.description}</p>
                   <p className='card-text'><strong>Tipo:</strong> {reminder.type}</p>
                   {reminder.dueDate && (<p className='card-text'><strong>Vence:</strong> {new Date(reminder.dueDate).toLocaleDateString()}</p>)}
-                  <div className='d-flex justify-content-between mt-3'>
-                    <button className='btn btn-sm btn-outline-primary' onClick={() => handleArchive(reminder._id)}>Desarchivar</button>
+                  <div className='mt-auto d-flex justify-content-center mt-3'>
+                    <button className='btn btn-sm btn-custom' onClick={() => handleArchive(reminder._id)}>Desarchivar</button>
                   </div>
                 </div>
               </div>

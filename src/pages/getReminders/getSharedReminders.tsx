@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useAuth } from "../../context/auth/useAuth";
+import { useAuth } from '../../context/auth/useAuth';
 
 interface Reminder{
   _id: string;
@@ -44,16 +44,16 @@ function SharedReminders(){
   }
 
   return(
-    <div className='container'>
-      <h1 className='mt-4'>Recordatorios compartidos contigo</h1>
+    <div className='container shared-reminders-container'>
+      <h1 className='mt-1 mb-5 shared-reminders-title'>Recordatorios compartidos contigo</h1>
       {reminders.length === 0 ?(
-        <p>No tienes recordatorios compartidos.</p>
+        <p className='text-center no-reminders'>No tienes recordatorios compartidos.</p>
       ):(
         <div className='row justify-content-around'>
           {reminders.map((reminder) =>(
             <div key={reminder._id} className='col-md-4 mb-3'>
-              <div className='card h-100'>
-                <div className='card-body'>
+              <div className='card h-100 shared-reminder-card'>
+                <div className='card-body d-flex flex-column'>
                   <h2 className='card-title'>{reminder.title}</h2>
                   <p className='card-text'>{reminder.description}</p>
                   <p className='card-text'><strong>Tipo: </strong>{reminder.type}</p>
@@ -61,7 +61,7 @@ function SharedReminders(){
                     <p className='card-text'><strong>Vence: </strong> {new Date(reminder.dueDate).toLocaleDateString()}</p>
                   )}
                   {reminder.author &&(
-                    <p className='card-text text-muted'><strong>Autor: </strong>{reminder.author.userName} ({reminder.author.email})</p>
+                    <p className='card-text text-muted mt-auto'><strong>Autor: </strong>{reminder.author.userName} ({reminder.author.email})</p>
                   )}
                 </div>
               </div>
@@ -70,7 +70,7 @@ function SharedReminders(){
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default SharedReminders;
