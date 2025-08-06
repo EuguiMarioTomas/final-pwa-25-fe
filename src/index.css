@@ -37,6 +37,7 @@ h2{
 .reminder-card {
   border: 2px solid #B99470;
   background-color: #252525;
+  color: #FEFAE0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .reminder-card:hover {
@@ -54,7 +55,7 @@ h2{
 
 .navbar-brand {
   font-weight: bold;
-  color: #FEFAE0;
+  color: #5F6F52;
   transition: color 0.3s ease;
   font-family:cursive;
   font-size: 1.5rem;
@@ -65,13 +66,15 @@ h2{
 }
 
 .nav-link {
-  color: #FEFAE0;
+  color: #5F6F52;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover,
 .dropdown-item:hover {
-  color: #B99470 !important;
+  background-color: #A9B388 !important;
+  color: #ffffff !important;
+  border-radius: 0.5rem;
 }
 
 .dropdown-menu {
@@ -81,7 +84,7 @@ h2{
 }
 
 .dropdown-item {
-  color: #A9B388 !important;
+  color: #5F6F52 !important;
   transition: background-color 0.2s ease;
 }
 
@@ -173,7 +176,8 @@ h2{
 }
 
 .archived-reminder-card {
-  background-color: #fdfdfd;
+  background-color: #252525;
+  color: #A9B388;
   border: 2px dashed #A9B388;
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
@@ -194,7 +198,8 @@ h2{
   border-radius: 12px;
 }
 .shared-reminder-card {
-  background-color: #fff;
+  background-color: #252525;
+  color: #A9B388;
   border: 2px solid #B99470;
   border-radius: 10px;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
