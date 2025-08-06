@@ -49,8 +49,9 @@ function MyArchivedReminders(){
     return <div className='container mt-4'>Cargando recordatorios archivados...</div>;
   }
   return(
-    <div className='container archived-reminders-container'>
-      <h1 className='mt-1 mb-5 archived-reminders-title'>Mis Recordatorios Archivados</h1>
+    <div className='container archived-reminders-container mt-5'>
+      <h1 className='mt-1 archived-reminders-title'>Mis Recordatorios Archivados</h1>
+      <h2>🗂️</h2>
       {reminders.length === 0 ? (
         <p className='text-center no-reminders'>No tienes recordatorios archivados.</p>
       ) : (

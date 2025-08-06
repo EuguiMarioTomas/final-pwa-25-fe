@@ -44,8 +44,9 @@ function SharedReminders(){
   }
 
   return(
-    <div className='container shared-reminders-container'>
-      <h1 className='mt-1 mb-5 shared-reminders-title'>Recordatorios compartidos contigo</h1>
+    <div className='container shared-reminders-container mt-5'>
+      <h1 className='mt-1 shared-reminders-title'>Recordatorios compartidos contigo</h1>
+      <h2>👥</h2>
       {reminders.length === 0 ?(
         <p className='text-center no-reminders'>No tienes recordatorios compartidos.</p>
       ):(
@@ -61,7 +62,7 @@ function SharedReminders(){
                     <p className='card-text'><strong>Vence: </strong> {new Date(reminder.dueDate).toLocaleDateString()}</p>
                   )}
                   {reminder.author &&(
-                    <p className='card-text text-muted mt-auto'><strong>Autor: </strong>{reminder.author.userName} ({reminder.author.email})</p>
+                    <p className='card-text mt-auto'><strong>Autor: </strong>{reminder.author.userName} ({reminder.author.email})</p>
                   )}
                 </div>
               </div>

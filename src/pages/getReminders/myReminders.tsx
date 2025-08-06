@@ -72,8 +72,9 @@ function MyReminders() {
   }
 
   return(
-    <div className='container my-reminders-container'>
-      <h1 className='mt-1 mb-5 my-reminders-title'>Mis Recordatorios</h1>
+    <div className='container my-reminders-container mt-5'>
+      <h1 className='mt-1 my-reminders-title'>Mis Recordatorios</h1>
+      <h2>🔔</h2>
       {reminders.length === 0 ? (
         <p className='text-center no-reminders'>No tienes recordatorios.</p>
       ) : (
@@ -82,7 +83,7 @@ function MyReminders() {
             <div key={reminder._id} className='col-md-4 mb-3'>
               <div className='card h-100 reminder-card'>
                 <div className='card-body d-flex flex-column'>
-                  <h2 className='card-title'>{reminder.title}</h2>
+                  <h2 className='card-title'><u>{reminder.title}</u></h2>
                   <p className='card-text mt-4'>{reminder.description}</p>
                   <p className='card-text mt-2'><strong>Tipo:</strong> {reminder.type}</p>
                   {reminder.dueDate && (<p className='card-text'><strong>Vence:</strong> {reminder.dueDate?.substring(0, 10).split('-').reverse().join('/')}</p>)}

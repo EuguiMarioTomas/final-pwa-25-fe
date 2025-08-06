@@ -45,7 +45,7 @@ function HomePage(){
     return <div className='container mt-4'>Cargando próximos recordatorios...</div>;
   }
   return (
-    <div className='container mt-4 homepage-container'>
+    <div className='container mt-3 mb-3 homepage-container'>
       <div className='mb-4'>
         <h1>Bienvenido{userData ? `, ${userData.userName}` : ''} 👋</h1>
       </div>
@@ -61,7 +61,8 @@ function HomePage(){
         </div>
       </div>
       <div className='mb-4'>
-        <h2>Recordatorios próximos a vencer</h2>
+        {/* <h2>Recordatorios próximos a vencer</h2> */}
+        <h2>⌛</h2>
       </div>
       {reminders.length === 0 ? (
         <p className='text-center no-reminders'>No hay recordatorios próximos a vencer.</p>
