@@ -20,6 +20,7 @@ h2{
   font-weight: 500;
   font-size: 1.5rem;
 }
+
 .btn-custom{
   background-color: #5F6F52;
   color: #FEFAE0;
@@ -36,7 +37,7 @@ h2{
 
 .reminder-card {
   border: 2px solid #B99470;
-  background-color: #252525;
+  background-color: #122b08d7;
   color: #FEFAE0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -148,6 +149,10 @@ h2{
   border-color: #5F6F52;
   box-shadow: 0 0 0 0.2rem rgba(95, 111, 82, 0.25);
 }
+.reminder-form input, .reminder-form textarea, .reminder-form select{
+  background-color: #122b08d7;
+  color: #ffffff;
+}
 
 /*Edit Reminders*/
 .edit-reminder-container {
@@ -176,7 +181,7 @@ h2{
 }
 
 .archived-reminder-card {
-  background-color: #252525;
+  background-color: #122b08d7;
   color: #A9B388;
   border: 2px dashed #A9B388;
   border-radius: 10px;
@@ -198,7 +203,7 @@ h2{
   border-radius: 12px;
 }
 .shared-reminder-card {
-  background-color: #252525;
+  background-color: #122b08d7;
   color: #A9B388;
   border: 2px solid #B99470;
   border-radius: 10px;
